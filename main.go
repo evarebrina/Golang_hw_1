@@ -17,7 +17,8 @@ func main() {
 	var datstr = string(dat)
 	array = strings.Split(datstr, " ")
 	for _, i := range array {
-		tmp, _ := strconv.Atoi(i)
+		tmp, err := strconv.Atoi(i)
+		check(err)
 		nums = append(nums, tmp)
 	}
 	nums = sort(nums)
